@@ -83,6 +83,14 @@
             transform: translateY(20px);
             animation: fadeIn 1s forwards;
         }
+        .home h1 {
+            padding-top: 50px;
+        }
+
+        .me {
+            text-align: center;
+            padding: 0px 100px 0px 100px;
+        }
 
         @keyframes fadeIn {
             to {
