@@ -3,190 +3,497 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SorrisoPerfeito - Clínica Odontológica</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>IGOR PEREIRA DA SILVA - PORTFÓLIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+        --primary: #4f46e5;
+        --secondary: #818cf8;
+        --dark: #1f2937;
+        --light: #f3f4f6;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: linear-gradient(to bottom right, #111827, #1f2937);
+        color: white;
+        line-height: 1.6;
+    }
+
+    /* NAVEGAÇÃO */
+    nav {
+        position: fixed;
+        width: 100%;
+        background: rgba(17, 24, 39, 0.95);
+        backdrop-filter: blur(8px);
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
+    .nav-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        color: #9ca3af;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Home Section */
+    .home {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 2rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1s forwards;
+    }
+
+    .home-content {
+        margin-top: 80px; /* Adicionado espaço no topo */
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .home h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        padding-top: 50px; /* Espaço adicional no topo do título */
+    }
+
+    .about-me-container {
+        background: rgba(31, 41, 55, 0.3);
+        border-radius: 1rem;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 800px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .about-me-container p {
+        color: #d1d5db;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        margin: 0.5rem;
+    }
+
+    .btn-primary {
+        background: var(--primary);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: #4338ca;
+    }
+
+    .btn-outline {
+        border: 2px solid var(--primary);
+        color: white;
+    }
+
+    .btn-outline:hover {
+        background: var(--primary);
+    }
+
+    /* Seção de Habilidades Expandida */
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 4rem 0 2rem;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .skill-card {
+        background: rgba(31, 41, 55, 0.8);
+        padding: 2rem;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .skill-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+    }
+
+    .skill-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        color: #d1d5db;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        background: var(--primary);
+        transition: transform 1s ease;
+        transform-origin: left;
+    }
+
+    /* Projetos com novo layout */
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .project-card {
+        display: flex;
+        background: rgba(31, 41, 55, 0.8);
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .project-preview {
+        flex: 0 0 40%;
+        overflow: hidden;
+    }
+
+    .project-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .project-content {
+        flex: 0 0 60%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .project-content h3 {
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .project-content p {
+        color: #d1d5db;
+        line-height: 1.6;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-card:hover .project-preview img {
+        transform: scale(1.1);
+    }
+
+    /* Contato */
+    .contact {
+        padding: 2.5rem 2rem;
+        background: rgba(31, 41, 55, 0.5);
+        text-align: center;
+        margin-top: 4rem;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .social-links a {
+        color: white;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+        color: var(--primary);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .project-card {
+            flex-direction: column;
+        }
+
+        .project-preview {
+            height: 200px;
+        }
+
+        .nav-links {
+            display: none;
+        }
+    }
+</style>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">SorrisoPerfeito</h1>
-            <ul class="nav-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#equipe">Equipe</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">IGOR PEREIRA DA SILVA</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#projects">Projetos</a>
+                <a href="#contact">Contato</a>
+            </div>
         </div>
     </nav>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <h2>Seu sorriso mais bonito começa aqui</h2>
-                <p>Tecnologia avançada e profissionais experientes para cuidar do seu sorriso</p>
-                <button class="btn-primary">
-                    Agende sua consulta 
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-            <div class="header-image">
-                <img src="imagens/clinica.jpg" alt="Clínica">
-            </div>
-        </div>
-    </header>
 
-    <!-- Serviços -->
-    <section id="servicos" class="services">
-        <div class="container">
-            <h2 class="section-title">Nossos Serviços</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="imagens/ortodontia.png" alt="Ortodontia" class="service-icon">
-                    <h3>Ortodontia</h3>
-                    <p>Alinhamento perfeito para seu sorriso</p>
-                </div>
-                <div class="service-card">
-                    <img src="imagens/implantes.png" alt="Implantes" class="service-icon">
-                    <h3>Implantes</h3>
-                    <p>Recupere seu sorriso com naturalidade</p>
-                </div>
-                <div class="service-card">
-                    <img src="imagens/clareamento.png" alt="Clareamento" class="service-icon">
-                    <h3>Clareamento</h3>
-                    <p>Dentes mais brancos e brilhantes</p>
-                </div>
-                <div class="service-card">
-                    <img src="imagens/proteses.png" alt="Próteses" class="service-icon">
-                    <h3>Próteses</h3>
-                    <p>Próteses personalizadas e naturais</p>
-                </div>
-                <div class="service-card">
-                    <img src="imagens/endodontia.png" alt="Endodontia" class="service-icon">
-                    <h3>Endodontia</h3>
-                    <p>Tratamento de canal moderno e eficiente</p>
-                </div>
-                <div class="service-card">
-                    <img src="imagens/odontopediatria.png" alt="Odontopediatria" class="service-icon">
-                    <h3>Odontopediatria</h3>
-                    <p>Cuidado especial para as crianças</p>
-                </div>
+    <section id="home" class="home">
+        <div class="home-content">
+            <h1>Desenvolvedor Web Front-End</h1>
+            <div class="about-me-container">
+                <p>Olá, eu sou Igor Pereira, um Desenvolvedor Web Front-End. Minha paixão por tecnologia me motiva a criar sites, sistemas e soluções inovadoras e funcionais, sempre priorizando a experiência do usuário em cada projeto.</p>
+                <p>Com habilidades sólidas em HTML, CSS e JavaScript, já desenvolvi projetos que vão desde landing pages dinâmicas até sistemas completos de gestão, como um sistema web de agendamento para pets. Estou sempre em busca de aprimorar minhas competências e explorar novas tecnologias que possam tornar meus projetos ainda mais eficientes.</p>
+                <p>Atualmente, busco oportunidades remotas onde eu possa contribuir com minha experiência em front-end e continuar evoluindo na área. Vamos construir algo incrível juntos!</p>
+            </div>
+            <div class="home-buttons">
+                <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                <a href="#contact" class="btn btn-outline">Contato</a>
             </div>
         </div>
     </section>
-    
 
-    <!-- Equipe -->
-    <section id="equipe" class="team">
-        <div class="container">
-            <h2 class="section-title">Nossa Equipe</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="imagens/ana-silva.jpeg" alt="Dra. Ana Silva">
-                    </div>
-                    <h3>Dra. Ana Silva</h3>
-                    <p class="specialty">Ortodontia</p>
-                    <p class="experience">15 anos de experiência</p>
+    <section id="skills" class="skills">
+        <h2 class="section-title">Habilidades</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-html5 skill-icon"></i>
+                <div class="skill-header">
+                    <span>HTML</span>
+                    <span>100%</span>
                 </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="imagens/carlos-santos.jpeg" alt="Dr. Carlos Santos">
-                    </div>
-                    <h3>Dr. Carlos Santos</h3>
-                    <p class="specialty">Implantodontia</p>
-                    <p class="experience">12 anos de experiência</p>
+                <div class="progress-bar">
+                    <div class="progress" style="transform: scaleX(1)"></div>
                 </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="imagens/mariana-costa.jpg" alt="Dra. Marina Costa">
-                    </div>
-                    <h3>Dra. Marina Costa</h3>
-                    <p class="specialty">Odontopediatria</p>
-                    <p class="experience">10 anos de experiência</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-css3-alt skill-icon"></i>
+                <div class="skill-header">
+                    <span>CSS</span>
+                    <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="transform: scaleX(0.9)"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js-square skill-icon"></i>
+                <div class="skill-header">
+                    <span>JavaScript</span>
+                    <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="transform: scaleX(0.85)"></div>
+                </div>
+            </div>
+            <!-- <div class="skill-card">
+                <i class="fab fa-react skill-icon"></i>
+                <div class="skill-header">
+                    <span>React</span>
+                    <span>0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="transform: scaleX(0.75)"></div>
+                </div>
+            </div> -->
+            <!-- <div class="skill-card">
+                <i class="fab fa-git-alt skill-icon"></i>
+                <div class="skill-header">
+                    <span>Git</span>
+                    <span>0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="transform: scaleX(0.8)"></div>
+                </div>
+            </div> -->
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt skill-icon"></i>
+                <div class="skill-header">
+                    <span>Responsive Design</span>
+                    <span>70%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="transform: scaleX(0.7)"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Depoimentos -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">O que nossos pacientes dizem</h2>
-            <div class="testimonials-carousel">
-                <div class="testimonial active">
-                    <p>"Atendimento excepcional! Toda a equipe é muito profissional e atenciosa."</p>
-                    <div class="testimonial-author">
-                        <h4>João Silva</h4>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projetos</h2>
+        <div class="projects-grid">
+            <a href="https://mvi-planilhas.vercel.app/">
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="Imagens/Preview1.png" alt="Preview MVI Planilhas">
+                    </div>
+                    <div class="project-content">
+                        <h3>Venda de Planilhas</h3>
+                        <p>Desenvolvimento de uma landing page atraente e funcional para a comercialização de planilhas, com foco em otimização de conversão e experiência do usuário.</p>
                     </div>
                 </div>
-                <div class="testimonial">
-                    <p>"Clínica moderna e ambiente acolhedor. Super recomendo!"</p>
-                    <div class="testimonial-author">
-                        <h4>Maria Oliveira</h4>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+            </a>
+            <a href="https://clinica-odontologica.vercel.app/">
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="Imagens/Preview1.png" alt="Preview Clínica Odontológica">
+                    </div>
+                    <div class="project-content">
+                        <h3>Apresentação Odontológica</h3>
+                        <p>Site de apresentação interativa para uma clínica odontológica, destacando os serviços oferecidos e os profissionais da equipe, com uma interface intuitiva e responsiva.</p>
                     </div>
                 </div>
-                <div class="carousel-buttons">
-                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="next"><i class="fas fa-chevron-right"></i></button>
+            </a>
+            <a href="#">
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="Imagens/Preview1.png" alt="Preview Sistema de Agendamento">
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema Web de Agendamento</h3>
+                        <p><strong>Trabalho Atual:</strong> Desenvolvimento de um sistema web completo para agendamento de banho e tosa em agropecuárias, incluindo funcionalidades para cadastro de clientes e pets, além de gestão financeira.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="contact">
-        <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>(11) 9999-9999</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>contato@sorrisoperfeito.com.br</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Av. Principal, 1000 - São Paulo, SP</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <span>Seg-Sex: 8h-18h | Sáb: 8h-12h</span>
-                    </div>
-                </div>
-                <form id="contact-form" class="contact-form">
-                    <input type="text" placeholder="Nome" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Mensagem" required></textarea>
-                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
-                </form>
-            </div>
+    <section id="contact" class="contact">
+        <h2 class="section-title">Vamos Conversar?</h2>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/igor-pereiraa" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/IgorPee16" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=igorpe160@gmail.com&su=Assunto%20do%20E-mail&body=" target="_blank"><i class="fas fa-envelope"></i></a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 SorrisoPerfeito - Todos os direitos reservados</p>
-        </div>
-    </footer>
+    <script>
+        // Animação das barras de progresso
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress');
+            progressBars.forEach(progress => {
+                const scaleX = progress.style.transform.replace('scaleX(', '').replace(')', '');
+                progress.style.transform = 'scaleX(0)';
+                setTimeout(() => {
+                    progress.style.transform = `scaleX(${scaleX})`;
+                }, 100);
+            });
+        }
 
-    <script src="script.js"></script>
+        // Observer para animar as barras de progresso quando visíveis
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateProgressBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const skillsSection = document.querySelector('.skills');
+        observer.observe(skillsSection);
+
+        // Scroll suave para as âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
