@@ -3,120 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IGOR PEREIRA DA SILVA - PORTFÓLIO</title>
+    <title>SorrisoPerfeito - Clínica Odontológica</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- AREA DE NAVEGAÇÃO -->
-    <nav>
-        <div class="nav-content">
-            <div class="logo">IGOR PEREIRA DA SILVA</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#skills">Habilidades</a>
-                <a href="#projects">Projetos</a>
-                <a href="#contact">Contato</a>
-            </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">SorrisoPerfeito</h1>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
         </div>
     </nav>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h2>Seu sorriso mais bonito começa aqui</h2>
+                <p>Tecnologia avançada e profissionais experientes para cuidar do seu sorriso</p>
+                <button class="btn-primary">
+                    Agende sua consulta 
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="header-image">
+                <img src="imagens/clinica.jpg" alt="Clínica">
+            </div>
+        </div>
+    </header>
 
-    <!-- Home Section -->
-    <section id="home" class="home">
-        <div class="home-content">
-            <h1>Desenvolvedor Web Front-End</h1>
-            <p class="me">Olá, eu sou Igor Pereira, um Desenvolvedor Web Front-End, 
-                Minha paixão por tecnologia me motiva a criar sites, sistemas e soluções inovadoras e funcionais, 
-                sempre priorizando a experiência do usuário em cada projeto. Acredito que um design intuitivo e uma 
-                execução impecável são fundamentais para engajar e satisfazer os usuários, 
-                e estou comprometido em oferecer isso em tudo que faço. <br> <br>
-                Com habilidades sólidas em HTML, CSS e JavaScript, já desenvolvi projetos que vão desde 
-                landing pages dinâmicas até sistemas completos de gestão, como um sistema web de agendamento para pets. 
-                Estou sempre em busca de aprimorar minhas competências e explorar novas tecnologias que possam tornar 
-                meus projetos ainda mais eficientes. <br> <br>
-                Atualmente, busco oportunidades remotas onde eu possa contribuir com minha experiência em front-end e 
-                continuar evoluindo na área. Vamos construir algo incrível juntos!</p>
-            <div class="home-buttons">
-                <a href="#projects" class="btn btn-primary">Ver Projetos</a>
-                <a href="#contact" class="btn btn-outline">Contato</a>
+    <!-- Serviços -->
+    <section id="servicos" class="services">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="imagens/ortodontia.png" alt="Ortodontia" class="service-icon">
+                    <h3>Ortodontia</h3>
+                    <p>Alinhamento perfeito para seu sorriso</p>
+                </div>
+                <div class="service-card">
+                    <img src="imagens/implantes.png" alt="Implantes" class="service-icon">
+                    <h3>Implantes</h3>
+                    <p>Recupere seu sorriso com naturalidade</p>
+                </div>
+                <div class="service-card">
+                    <img src="imagens/clareamento.png" alt="Clareamento" class="service-icon">
+                    <h3>Clareamento</h3>
+                    <p>Dentes mais brancos e brilhantes</p>
+                </div>
+                <div class="service-card">
+                    <img src="imagens/proteses.png" alt="Próteses" class="service-icon">
+                    <h3>Próteses</h3>
+                    <p>Próteses personalizadas e naturais</p>
+                </div>
+                <div class="service-card">
+                    <img src="imagens/endodontia.png" alt="Endodontia" class="service-icon">
+                    <h3>Endodontia</h3>
+                    <p>Tratamento de canal moderno e eficiente</p>
+                </div>
+                <div class="service-card">
+                    <img src="imagens/odontopediatria.png" alt="Odontopediatria" class="service-icon">
+                    <h3>Odontopediatria</h3>
+                    <p>Cuidado especial para as crianças</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Equipe -->
+    <section id="equipe" class="team">
+        <div class="container">
+            <h2 class="section-title">Nossa Equipe</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="imagens/ana-silva.jpeg" alt="Dra. Ana Silva">
+                    </div>
+                    <h3>Dra. Ana Silva</h3>
+                    <p class="specialty">Ortodontia</p>
+                    <p class="experience">15 anos de experiência</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="imagens/carlos-santos.jpeg" alt="Dr. Carlos Santos">
+                    </div>
+                    <h3>Dr. Carlos Santos</h3>
+                    <p class="specialty">Implantodontia</p>
+                    <p class="experience">12 anos de experiência</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="imagens/mariana-costa.jpg" alt="Dra. Marina Costa">
+                    </div>
+                    <h3>Dra. Marina Costa</h3>
+                    <p class="specialty">Odontopediatria</p>
+                    <p class="experience">10 anos de experiência</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h2 class="section-title">Habilidades</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-header">
-                    <span>HTML</span>
-                    <span>100%</span>
+    <!-- Depoimentos -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">O que nossos pacientes dizem</h2>
+            <div class="testimonials-carousel">
+                <div class="testimonial active">
+                    <p>"Atendimento excepcional! Toda a equipe é muito profissional e atenciosa."</p>
+                    <div class="testimonial-author">
+                        <h4>João Silva</h4>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress" style="transform: scaleX(1)"></div>
+                <div class="testimonial">
+                    <p>"Clínica moderna e ambiente acolhedor. Super recomendo!"</p>
+                    <div class="testimonial-author">
+                        <h4>Maria Oliveira</h4>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-header">
-                    <span>JavaScript</span>
-                    <span>85%</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress" style="transform: scaleX(0.85)"></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-header">
-                    <span>CSS</span>
-                    <span>90%</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress" style="transform: scaleX(0.9)"></div>
+                <div class="carousel-buttons">
+                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projetos Section -->
-<section id="projects" class="projects">
-    <h2 class="section-title">Projetos</h2>
-    <div class="projects-grid">
-        <a href="https://mvi-planilhas.vercel.app/">
-            <div class="project-card">
-                <i class="fas fa-shopping-cart"></i>
-                <h3>Venda de Planilhas</h3>
-                <p>Desenvolvimento de uma landing page atraente e funcional para a comercialização de planilhas, com foco em otimização de conversão e experiência do usuário.</p>
-                <br>
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(11) 9999-9999</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contato@sorrisoperfeito.com.br</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Av. Principal, 1000 - São Paulo, SP</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Seg-Sex: 8h-18h | Sáb: 8h-12h</span>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Mensagem" required></textarea>
+                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                </form>
             </div>
-        </a>
-        <a href="https://clinica-odontologica.vercel.app/">
-            <div class="project-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Apresentação Odontológica</h3>
-                <p>Site de apresentação interativa para uma clínica odontológica, destacando os serviços oferecidos e os profissionais da equipe, com uma interface intuitiva e responsiva.</p>
-                <br>
-            </div>
-        </a>
-        <a href="#">
-            <div class="project-card">
-                <i class="fas fa-code"></i>
-                <h3>Sistema Web de Agendamento</h3>
-                <p><strong>Trabalho Atual:</strong> Desenvolvimento de um sistema web completo para agendamento de banho e tosa em agropecuárias, incluindo funcionalidades para cadastro de clientes e pets, além de gestão financeira.</p>
-            </div>
-        </a>
-    </div>
-</section>
-
-
-    <!-- CONTATOS / REDES SOCIAIS -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Vamos Conversar?</h2>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/igor-pereiraa" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/IgorPee16" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=igorpe160@gmail.com&su=Assunto%20do%20E-mail&body=" target="_blank"><i class="fas fa-envelope"></i></a>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 SorrisoPerfeito - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
